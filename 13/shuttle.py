@@ -22,7 +22,6 @@ def second():
     busses = [(i, int(j))
               for i, j in enumerate(lines[1].split(',')) if j != "x"]
     timestamp = busses[0][1]
-    # max(busses, key=lambda x: x[1])[1]
 
     done = False
     added = set()
@@ -35,7 +34,7 @@ def second():
                 if v not in added:
                     added.add(v)
                     increment *= v
-            if not (timestamp + i) % v == 0:
+            else:
                 done = False
                 timestamp += increment
                 break
